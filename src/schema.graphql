@@ -1,0 +1,58 @@
+# @format
+
+type Cart {
+  cartId: ID
+  cartName: String
+  totalPrice: Int
+  product: [Product]
+}
+
+type Product {
+  productId: ID
+  productName: String
+  productPrice: Int
+  productType: ProductType
+  productStatus: ProductStatus
+}
+
+enum ProductType {
+  CLASSIC
+  PREMIUM
+  BUDGET
+}
+
+enum ProductStatus {
+  SOLD_OUT
+  IN_STOCK
+}
+
+type DeletedResourceResponse {
+  deletedId: ID
+  success: Boolean
+}
+
+type Query {
+  getCartById(cartId: ID!): Cart
+  getAllCarts: [Cart]
+  getProductById(productId: ID): Product
+  getAllProducts: [Product]
+}
+
+type Mutation {
+  createCart(cartName: String): Cart
+  updateCart(cartId: ID!, cartName: String!): Cart
+  deleteCart(cartId: ID!): DeletedResourceResponse
+  createProduct(input: CreateProductInput!): Product
+  deleteProduct(productId: ID!): DeletedResourceResponse
+  addProductsToCart(cartId: ID!, productId: ID!): Cart
+  removeProductsFromCart(cartId: ID!, productId: ID!): Cart
+  emptyCart(cartId: ID!): Cart
+}
+
+input CreateProductInput {
+  productId: ID
+  productName: String!
+  productPrice: Int!
+  productType: ProductType
+  productStatus: ProductStatus
+}

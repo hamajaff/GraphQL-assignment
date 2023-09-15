@@ -1,0 +1,21 @@
+{
+  "cartId": "a147c7bb-bcfc-4048-b175-2f36a8022d25",
+  "cartName": "costumer 3",
+  "totalPrice": 220,
+  "product": [
+    {
+      "productId": "1f8a7d52-e1bd-4366-8afa-286639b2627b",
+      "productName": "Vanilla Dream Candle",
+      "productPrice": 100,
+      "productType": "CLASSIC",
+      "productStatus": "IN_STOCK"
+    },
+    {
+      "productId": "6c1ec336-d811-4c93-b6c1-b13629232b94",
+      "productName": "Lavender Bliss Candle",
+      "productPrice": 120,
+      "productType": "CLASSIC",
+      "productStatus": "IN_STOCK"
+    }
+  ]
+}
